@@ -15,28 +15,37 @@
 <script type="text/javascript" charset="utf-8">	
 	function loadXMLDoc(dname) 
 	{
-		try //Internet Explorer
-		  {
-		  xmlDoc=new ActiveXObject("Microsoft.XMLDOM");
-		  }
-		catch(e)
-		  {
-		  try //Firefox, Mozilla, Opera, etc.
-			{
-			xmlDoc=document.implementation.createDocument("","",null);
-			}
-		  catch(e) {alert(e.message)}
-		  }
+	  try //Firefox, Mozilla, Opera, etc.
+		{
+		xmlDoc=document.implementation.createDocument("","",null);
+		}
+
 		try 
 		  {
 		  xmlDoc.async=false;
 		  xmlDoc.load(dname);
 		  return(xmlDoc);
 		  }
-		catch(e) {alert(e.message)}
+		catch(e) {alert(e.message)
+		}
+		
 		return(null);
 	}
 </script>
+
+<script type="text/javascript" charset="utf-8">	
+	function loadDoc(doc) {
+	  var xhttp = new XMLHttpRequest();
+	  xhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+		myFunction(this);
+		}
+	  };
+	  xhttp.open("GET", doc, true);
+	  xhttp.send();
+	}
+</script>
+
 
 <style>
 html {
@@ -63,28 +72,6 @@ a {
 a:hover {
 	color: #000;
 	text-decoration: underline;
-}
-h4 {
-	margin: 2px 0 0 0;
-	padding: 0 40px;
-	border: 0;
-	outline: 0;
-	font-family: Verdana, Geneva, sans-serif;
-	font-size: 14px;
-	font-weight: normal;
-	text-align: right;
-}
-h3 {
-	margin: 0 0 0 0;
-	padding: 0 40px;
-	border: 0;
-	outline: 0;
-	font-family: Verdana, Geneva, sans-serif;
-	font-size: 10px;
-	font-weight: bold;
-	text-transform: uppercase;
-	/*  font-style:italic;*/
-	text-align: right;
 }
 h2 {
 	margin: 0;
@@ -118,7 +105,6 @@ h2 {
 	float: left;
 	width: 150px;
 	height: 100%:
-	
 }
 #footer {
 	background: #eee;
@@ -153,10 +139,10 @@ Header
 <div id="menu">	
 Menu
 <ul>
-<li><a onclick="loadXMLDoc('one.html')" />First Page</a></li>
-<li><a onclick="loadXMLDoc('two.html')" />Second Page</a></li>
-<li><a onclick="loadXMLDoc('three.html')" />Third Page</a></li>
-<li><a onclick="loadXMLDoc('four.html')" />Fourth Page</a></li>
+<li><a onclick="loadDoc('one.html')" />First Page</a></li>
+<li><a onclick="loadDoc('two.html')" />Second Page</a></li>
+<li><a onclick="loadDoc('three.html')" />Third Page</a></li>
+<li><a onclick="loadDoc('four.html')" />Fourth Page</a></li>
 </ul>
 
 </div>
