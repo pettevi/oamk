@@ -11,7 +11,33 @@
 	<meta name="author" content="Petteri Hamalainen" />
 	
 	<title>Petteri</title>
-	
+
+<script type="text/javascript" charset="utf-8">	
+	function loadXMLDoc(dname) 
+	{
+		try //Internet Explorer
+		  {
+		  xmlDoc=new ActiveXObject("Microsoft.XMLDOM");
+		  }
+		catch(e)
+		  {
+		  try //Firefox, Mozilla, Opera, etc.
+			{
+			xmlDoc=document.implementation.createDocument("","",null);
+			}
+		  catch(e) {alert(e.message)}
+		  }
+		try 
+		  {
+		  xmlDoc.async=false;
+		  xmlDoc.load(dname);
+		  return(xmlDoc);
+		  }
+		catch(e) {alert(e.message)}
+		return(null);
+	}
+</script>
+
 <style>
 html {
 	background: #fffffd;
@@ -25,16 +51,8 @@ html,body {
 	font-size: 16px;
 	font-family: Verdana, Geneva, sans-serif;
 	color: #eee;
-  text-align: center;
-}
-.contact {
-  font-size: 10px;
-  color: #555; 
-  font-weight: normal;
-  padding: 0px;
-  text-decoration: none;
-  text-align: center;
-  margin: 5px auto;
+	height: 100%;
+	width: 100%;
 }
 a {
 	color: #555; 
@@ -97,6 +115,10 @@ h2 {
 	margin: 0 auto 0 auto;
 	padding: 0 30px 0 40px;
 	text-align: left;
+	float: left;
+	width: 150px;
+	height: 100%:
+	
 }
 #footer {
 	background: #eee;
@@ -130,6 +152,13 @@ Header
 
 <div id="menu">	
 Menu
+<ul>
+<li><a onclick="loadXMLDoc('one.html')" />First Page</a></li>
+<li><a onclick="loadXMLDoc('two.html')" />Second Page</a></li>
+<li><a onclick="loadXMLDoc('three.html')" />Third Page</a></li>
+<li><a onclick="loadXMLDoc('four.html')" />Fourth Page</a></li>
+</ul>
+
 </div>
 
 <div id="content">	
