@@ -1,6 +1,3 @@
-
-<%@ page contentType="text/html;charset=UTF-8" language="java"%>
-
 <!DOCTYPE HTML>
 
 <html>
@@ -12,56 +9,31 @@
 	
 	<title>Petteri</title>
 
-<script type="text/javascript" charset="utf-8">	
-	function loadXMLDoc(dname) 
-	{
-	  try //Firefox, Mozilla, Opera, etc.
-		{
-		xmlDoc=document.implementation.createDocument("","",null);
-		}
-
-		try 
-		  {
-		  xmlDoc.async=false;
-		  xmlDoc.load(dname);
-		  return(xmlDoc);
-		  }
-		catch(e) {alert(e.message)
-		}
-		
-		return(null);
-	}
-</script>
-
-<script type="text/javascript" charset="utf-8">	
-	function loadDoc(doc) {
+<script type="text/javascript">	
+	function loadDoc(docs) {
 	  var xhttp = new XMLHttpRequest();
 	  xhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
-		myFunction(this);
+		  document.getElementById("content").innerHTML = this.responseText;
 		}
 	  };
-	  xhttp.open("GET", doc, true);
+	  xhttp.open("GET", docs, true);
 	  xhttp.send();
 	}
 </script>
 
-
 <style>
-html {
-	background: #fffffd;
-}
 html,body {
-  background: #eee;
-	margin: 0;
-	padding: 0;
-	border: 0;
-	outline: 0;
 	font-size: 16px;
 	font-family: Verdana, Geneva, sans-serif;
 	color: #eee;
 	height: 100%;
 	width: 100%;
+}
+ul li 
+{
+	list-style:none;
+	text-decoration: none;
 }
 a {
 	color: #555; 
@@ -70,7 +42,7 @@ a {
 	padding: 0px;
 }
 a:hover {
-	color: #000;
+	color: #f00;
 	text-decoration: underline;
 }
 h2 {
@@ -89,8 +61,7 @@ h2 {
 	font-family: Verdana, Geneva, sans-serif;
 	font-size: 22px;
 	font-weight: bold;
-	margin: 0 auto 0 auto;
-	padding: 0 30px 0 40px;
+	padding: 30px ;
 	text-align: left;
 }
 #menu {
@@ -99,11 +70,10 @@ h2 {
 	font-family: Verdana, Geneva, sans-serif;
 	font-size: 22px;
 	font-weight: bold;
-	margin: 0 auto 0 auto;
 	padding: 0 30px 0 40px;
 	text-align: left;
 	float: left;
-	width: 150px;
+	width: 250px;
 	height: 100%:
 }
 #footer {
@@ -112,19 +82,18 @@ h2 {
 	font-family: Verdana, Geneva, sans-serif;
 	font-size: 22px;
 	font-weight: bold;
-	margin: 0 auto 0 auto;
-	padding: 0 30px 0 40px;
+	padding: 30px;
 	text-align: left;
 }
 #content {
-	background: #eee;
+	background: #fff;
 	color: #000;
 	font-family: Verdana, Geneva, sans-serif;
 	font-size: 22px;
 	font-weight: bold;
-	margin: 0 auto 0 auto;
-	padding: 0 30px 0 40px;
+	padding: 30px;
 	text-align: left;
+	margin-left: 160px;
 }
 </style>
 
@@ -138,6 +107,7 @@ Header
 
 <div id="menu">	
 Menu
+
 <ul>
 <li><a onclick="loadDoc('one.html')" />First Page</a></li>
 <li><a onclick="loadDoc('two.html')" />Second Page</a></li>
