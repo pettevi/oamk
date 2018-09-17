@@ -9,7 +9,21 @@ $nimmari='Heips';
 $ika=5;
 
 echo 'Moikkelis ';
-echo $ika;
-echo 'Nimmarit '.$nimmari.' juupa juu'.$ika.' ja muuta semmosta';
+
+echo $ika'.<br>;
+echo 'Nimmarit '.$nimmari.'<br> juupa juu'.$ika.'<br> ja muuta semmosta';
+
+?>
+
+Taulukko
+
+<?php
+
+@nimet=array{'eka','toka','kolmas'};
+
+echo 'Nimet olis<br>';
+
+print_r($nimet);
+
 
 ?>
