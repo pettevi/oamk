@@ -10,7 +10,8 @@ $ika=5;
 
 echo 'Moikkelis ';
 
-echo $ika.'<br>';
+echo "ika $ika <br>";
+echo $ika;
 echo 'Nimmarit '.$nimmari.'<br> juupa juu'.$ika.'<br> ja muuta semmosta';
 
 ?>
