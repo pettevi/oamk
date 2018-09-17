@@ -55,8 +55,7 @@ array("etu"=>'liisa', "suku"=>'Kukkonen')
 
 foreach ($hlo as $rivi)
 {
-	echo $rivi['etu'].' '.$rivi['suku'];
-	
+	echo $rivi['etu'].' '.$rivi['suku'].'<br>';	
 }
 
  ?>
