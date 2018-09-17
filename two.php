@@ -8,8 +8,8 @@
 $nimmari='Heips';
 $ika=5;
 
-echo 'Moikkelis '
-echo $ika
-echo 'Nimmarit '.$nimmari.' juupa juu'.$ika.' ja muuta semmosta'
+echo 'Moikkelis ';
+echo $ika;
+echo 'Nimmarit '.$nimmari.' juupa juu'.$ika.' ja muuta semmosta';
 
 ?>
