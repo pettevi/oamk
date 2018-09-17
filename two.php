@@ -20,7 +20,7 @@ Taulukko
 
 <?php
 
-@nimet=array('eka','toka','kolmas');
+$nimet = array('eka','toka','kolmas');
 
 echo 'Nimet olis<br>';
 
