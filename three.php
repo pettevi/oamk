@@ -11,7 +11,7 @@ print_r($_POST);
 
 echo "<br>";
 
-echo 'Nimi '.$_POST['firstname'];
+echo 'Nimi '.$_POST['firstname'].'<br>';
 echo 'SukuNimi '.$_POST['lastname'];
 
 ?>
@@ -26,7 +26,7 @@ print_r($_GET);
 
 echo "<br>";
 
-echo 'Nimi '.$_GET['firstname'];
+echo 'Nimi '.$_GET['firstname'].'<br>';
 echo 'SukuNimi '.$_GET['lastname'];
 
 ?>
