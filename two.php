@@ -10,7 +10,7 @@ $ika=5;
 
 echo 'Moikkelis ';
 
-echo $ika'.<br>;
+echo $ika'.'<br>;
 echo 'Nimmarit '.$nimmari.'<br> juupa juu'.$ika.'<br> ja muuta semmosta';
 
 ?>
@@ -19,7 +19,7 @@ Taulukko
 
 <?php
 
-@nimet=array{'eka','toka','kolmas'};
+@nimet=array('eka','toka','kolmas');
 
 echo 'Nimet olis<br>';
 
