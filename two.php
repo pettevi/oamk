@@ -12,11 +12,11 @@ echo 'Moikkelis ';
 
 echo "ika $ika <br>";
 echo $ika;
-echo 'Nimmarit '.$nimmari.'<br> juupa juu'.$ika.'<br> ja muuta semmosta';
+echo 'Nimmarit '.$nimmari.'<br> juupa juu '.$ika.'<br> ja muuta semmosta';
 
 ?>
 
-Taulukko
+<p>Taulukko</p>
 
 <?php
 
@@ -30,8 +30,36 @@ echo '<br> Nimi yks:'.$nimet[0];
 echo '<br> Nimi kaks:'.$nimet[1];
 echo '<br> Nimi kol:'.$nimet[2];
 
+?>
+
+<?php
+
+$hlo=array(
+array("etu"=>'matti', "suku"=>'meikalainen'),
+array("etu"=>'liisa', "suku"=>'meikalainen'),
+array("etu"=>'matti', "suku"=>'Kukkonen'),
+array("etu"=>'liisa', "suku"=>'Kukkonen')
+);
 
 ?>
+
+
+<p>Nimet: </p>
+
+
+<?php print_r($hlo); ?>
+
+<p>Sukunimet: </p>
+
+<?php 
+
+foreach ($hlo as $rivi)
+{
+	echo $rivi['etu'].' '.$rivi['suku'];
+	
+}
+
+ ?>
 
 
 
